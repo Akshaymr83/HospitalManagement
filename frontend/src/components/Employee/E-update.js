@@ -20,7 +20,7 @@ const E_Update = () => {
   const [departmentHeads, setDepartmentHeads] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:4001/getUserEmployee/${id}`)
+    axios.get(`https://hospital-admin-side.onrender.com/getUserEmployee/${id}`)
       .then((res) => {
         const employeeData = res.data;
         setName(employeeData.name);
@@ -37,7 +37,7 @@ const E_Update = () => {
   }, [id]);
 
   useEffect(() => {
-    axios.get('http://localhost:4001/deptName')
+    axios.get('https://hospital-admin-side.onrender.com/deptName')
       .then((res) => {
         setDepartments(res.data);
       })
@@ -45,7 +45,7 @@ const E_Update = () => {
   }, []);
 
   useEffect(() => {
-    axios.get('http://localhost:4001/deptHeadName')
+    axios.get('https://hospital-admin-side.onrender.com/deptHeadName')
       .then((res) => {
         setDepartmentHeads(res.data);
       })
@@ -68,7 +68,7 @@ const E_Update = () => {
     formData.append('report', report);
     formData.append('description', description);
       
-    axios.put(`http://localhost:4001/updateEmployee/${id}`, formData)
+    axios.put(`https://hospital-admin-side.onrender.com/updateEmployee/${id}`, formData)
       .then((res) => {
         console.log(res.data);
         alert("Success user");

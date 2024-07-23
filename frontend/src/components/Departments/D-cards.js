@@ -12,7 +12,7 @@ function Dcards() {
 
 
   useEffect(() => {
-    axios.get("http://localhost:4001/getdepartments")
+    axios.get("https://hospital-admin-side.onrender.com/getdepartments")
       .then((res) => {
         console.log("Data received:", res.data);
         setDepartments(res.data.departments);
@@ -22,7 +22,7 @@ function Dcards() {
       });
   }, []);
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:4001/deleteDepartment/${id}`)
+    axios.delete(`https://hospital-admin-side.onrender.com/deleteDepartment/${id}`)
       .then((res) => {
         console.log("Department deleted");
         // Update the state after deletion
@@ -48,7 +48,7 @@ function Dcards() {
           <Card.Img className='Img'
 
             variant="top"
-            src={`http://localhost:4001/${department.image}`} // Assuming images are served from the root directory of the server
+            src={`https://hospital-admin-side.onrender.com/${department.image}`} // Assuming images are served from the root directory of the server
             alt={`Department ${department.department}`}
          
           />

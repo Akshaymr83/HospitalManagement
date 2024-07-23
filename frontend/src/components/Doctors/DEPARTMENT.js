@@ -10,7 +10,7 @@ const DEPARTMENT = () => {
   useEffect(() => {
     const fetchHead = async () => {
       try {
-        const response = await axios.get(`http://localhost:4001/getDEPByName/${id}`);
+        const response = await axios.get(`https://hospital-admin-side.onrender.com/getDEPByName/${id}`);
         setDep(response.data);
       } catch (error) {
         console.error("Error fetching department :", error);
@@ -34,7 +34,7 @@ const DEPARTMENT = () => {
        
        
         <div class="cards" style={{marginTop:'4rem',display:'flex',justifyContent:'center',alignItems:"center",columnGap:'2rem'}} >
-        <img  className="cards-img-top img-fluid" src={`http://localhost:4001/${dep.image}`} alt={`Department ${dep._id}`} style={{ maxWidth: "550px", maxHeight: "650px",borderRadius:'2rem' }} />
+        <img  className="cards-img-top img-fluid" src={`https://hospital-admin-side.onrender.com/${dep.image}`} alt={`Department ${dep._id}`} style={{ maxWidth: "550px", maxHeight: "650px",borderRadius:'2rem' }} />
   
   <div class="cards__content">
     <h4 style={{fontSize:'20px'}} className="cards-title">Department:{dep.department}</h4>

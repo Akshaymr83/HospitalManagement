@@ -12,7 +12,7 @@ const Doctors = () => {
   useEffect(() => {
     const fetchHead = async () => {
       try {
-        const response = await axios.get(`http://localhost:4001/getHeadByName/${id}`);
+        const response = await axios.get(`https://hospital-admin-side.onrender.com/getHeadByName/${id}`);
         setHead(response.data);
       } catch (error) {
         console.error("Error fetching department head:", error);
@@ -37,7 +37,7 @@ const Doctors = () => {
 
 
         <div class="cards" style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', alignItems: "center", columnGap: '2rem' }} >
-          <img className="cards-img-top img-fluid" src={`http://localhost:4001/${head.image}`} alt={`Department ${head._id}`} style={{ maxWidth: "550px", maxHeight: "650px", borderRadius: '2rem' }} />
+          <img className="cards-img-top img-fluid" src={`https://hospital-admin-side.onrender.com/${head.image}`} alt={`Department ${head._id}`} style={{ maxWidth: "550px", maxHeight: "650px", borderRadius: '2rem' }} />
 
           <div class="cards__content">
             <h4 style={{ fontSize: '20px' }} className="cards-title">Department:{head.department}</h4>

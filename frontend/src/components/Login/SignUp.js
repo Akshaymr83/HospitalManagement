@@ -20,7 +20,7 @@ const Signup = () => {
       return; // Exit early if any field is empty
     }
     axios
-    .post("http://localhost:4001/signup", { name, email, password })
+    .post("https://hospital-admin-side.onrender.com/signup", { name, email, password })
     .then((res) => {
       // Extract the user's name from the response
       const userName = res.data.name; // Use res.data.name to extract the user's name

@@ -20,7 +20,7 @@ const Login = () => {
       return; // Exit early if any field is empty
     }
     axios
-    .post("http://localhost:4001/login", { email, password })
+    .post("https://hospital-admin-side.onrender.com/login", { email, password })
     .then((res) => {
       if (res.data.Status === "Success") {
         // Set the user's name if available

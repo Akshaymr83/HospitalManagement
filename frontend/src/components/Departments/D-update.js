@@ -13,7 +13,7 @@ function D_update() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:4001/getUserDepartment/${id}`)
+    axios.get(`https://hospital-admin-side.onrender.com/getUserDepartment/${id}`)
       .then((res) => {
         const departmentData = res.data; // Assuming the response contains the department data
         setDepartment(departmentData.department);
@@ -40,7 +40,7 @@ function D_update() {
     formData.append('image', image);
     formData.append('description', description);
   
-    axios.put(`http://localhost:4001/updateDepartment/${id}`, formData)
+    axios.put(`https://hospital-admin-side.onrender.com/updateDepartment/${id}`, formData)
       .then((res) => {
         console.log(res.data);
         alert("Success");

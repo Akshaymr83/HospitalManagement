@@ -10,7 +10,7 @@ function DH_cards() {
   const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:4001/getDepHead')
+    axios.get('https://hospital-admin-side.onrender.com/getDepHead')
     .then((res) => {
       console.log("data received", res.data);
       setEmployee(res.data.employee);
@@ -21,7 +21,7 @@ function DH_cards() {
   }, []);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:4001/deleteDepHead/${id}`)
+    axios.delete(`https://hospital-admin-side.onrender.com/deleteDepHead/${id}`)
     .then((res) => {
       console.log("deleted");
       setEmployee(employee.filter(employees => employees._id !== id)); 
@@ -42,7 +42,7 @@ function DH_cards() {
             <Card.Img className='Img'
                       style={{marginTop:'1rem'}}
               variant="top"
-              src={`http://localhost:4001/${employees.image}`}
+              src={`https://hospital-admin-side.onrender.com/${employees.image}`}
               alt={`Department ${employees.name}`}
             />
             <Card.Body>

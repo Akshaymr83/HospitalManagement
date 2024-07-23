@@ -20,7 +20,7 @@ const DH_head = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:4001/deptName')
+    axios.get('https://hospital-admin-side.onrender.com/deptName')
       .then((res) => {
         setDepartments(res.data);
       })
@@ -47,7 +47,7 @@ const DH_head = () => {
       formDataToSend.append('department', formData.department);
       formDataToSend.append('description', formData.description);
 
-      await axios.post('http://localhost:4001/depHead', formDataToSend);
+      await axios.post('https://hospital-admin-side.onrender.com/depHead', formDataToSend);
   
       alert('Doctor added successfully');
       navigate('/DHcards');

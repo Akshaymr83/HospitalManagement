@@ -16,7 +16,7 @@ function EmployeeCard() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:4001/getEmployee')
+    axios.get('https://hospital-admin-side.onrender.com/getEmployee')
     .then((res) => {
       console.log("data received", res.data);
       setEmployee(res.data.employee);
@@ -32,7 +32,7 @@ function EmployeeCard() {
 
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:4001/deleteEmployee/${id}`)
+    axios.delete(`https://hospital-admin-side.onrender.com/deleteEmployee/${id}`)
     .then((res) => {
       console.log("deleted");
       setEmployee(employee.filter(employees => employees._id !== id)); 
@@ -50,7 +50,7 @@ function EmployeeCard() {
           <Card className='ecard' key={index}>
             <Card.Img className='Img'
               variant="top"
-              src={`http://localhost:4001/${employees.image}`}
+              src={`https://hospital-admin-side.onrender.com/${employees.image}`}
               alt={`Department ${employees.name}`}
             />
             <Card.Body>

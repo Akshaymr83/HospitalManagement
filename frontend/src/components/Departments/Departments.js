@@ -27,7 +27,7 @@ const navigate=useNavigate();
 
  
   useEffect(() => {
-    axios.get('http://localhost:4001/deptName')
+    axios.get('https://hospital-admin-side.onrender.com/deptName')
       .then((res) => {
         setDepartments(res.data);
       })
@@ -47,7 +47,7 @@ const navigate=useNavigate();
       formDataToSend.append('image', formData.image);
       formDataToSend.append('description', formData.description);
 
-      await axios.post('http://localhost:4001/departments', formDataToSend);
+      await axios.post('https://hospital-admin-side.onrender.com/departments', formDataToSend);
       console.log('Department added successfully');
       alert('Department added successfully');
       navigate('/dcards')

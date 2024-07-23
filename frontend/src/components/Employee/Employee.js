@@ -22,7 +22,7 @@
 //   const navigate = useNavigate();
 
 //   // useEffect(() => {
-//   //   axios.get('http://localhost:4001/deptName')
+//   //   axios.get('https://hospital-admin-side.onrender.com/deptName')
 //   //     .then((res) => {
 //   //       setDepartments(res.data);
 //   //     })
@@ -30,7 +30,7 @@
 //   // }, []);
 
 //   // useEffect(() => {
-//   //   axios.get('http://localhost:4001/deptHeadName')
+//   //   axios.get('https://hospital-admin-side.onrender.com/deptHeadName')
 //   //     .then((res) => {
 //   //       setDepartmentsHead(res.data);
 //   //     })
@@ -39,7 +39,7 @@
 
 
 //   useEffect(() => {
-//     axios.get('http://localhost:4001/deptName')
+//     axios.get('https://hospital-admin-side.onrender.com/deptName')
 //       .then((res) => {
 //         setDepartments(res.data);
 //       })
@@ -47,7 +47,7 @@
 //   }, []);
 
 //   useEffect(() => {
-//     axios.get('http://localhost:4001/deptHeadName')
+//     axios.get('https://hospital-admin-side.onrender.com/deptHeadName')
 //       .then((res) => {
 //         setDepartmentsHead(res.data);
 //       })
@@ -73,7 +73,7 @@
 //       formDataToSend.append('report', formData.report);
 //       formDataToSend.append('description', formData.description);
 
-//       await axios.post('http://localhost:4001/employee', formDataToSend);
+//       await axios.post('https://hospital-admin-side.onrender.com/employee', formDataToSend);
 //       console.log('employee added successfully');
 //       alert('employee added successfully');
 //       navigate('/ecards');
@@ -210,13 +210,13 @@ const EmployeeForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:4001/deptName')
+    axios.get('https://hospital-admin-side.onrender.com/deptName')
       .then((res) => {
         setDepartments(res.data);
       })
       .catch((err) => console.log(err));
       
-    axios.get('http://localhost:4001/deptHeadName')
+    axios.get('https://hospital-admin-side.onrender.com/deptHeadName')
       .then((res) => {
         setDepartmentsHead(res.data);
       })
@@ -247,7 +247,7 @@ const EmployeeForm = () => {
       formDataToSend.append('report', formData.report);
       formDataToSend.append('description', formData.description);
 
-      await axios.post('http://localhost:4001/employee', formDataToSend);
+      await axios.post('https://hospital-admin-side.onrender.com/employee', formDataToSend);
       console.log('Employee added successfully');
       alert('Employee added successfully');
       navigate('/ecards');
