@@ -75,11 +75,11 @@ Button{
   .ecard {
     display: flex;
     width: 21rem;
-    height: 32rem;
+    height: 34rem;
     align-items: center;
     position: relative;
     font-family: "Mukta Malar", sans-serif;
-  }
+}
   .e-background {
     background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
     display: grid;
@@ -93,3 +93,58 @@ Button{
     margin-left: 5rem;
     margin-top: 5rem;
   }
+  
+  .carousel-text {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: white;
+}
+
+.carousel-text h1,
+.carousel-text h2,
+.carousel-text h3 {
+    margin: 0;
+    text-align: left;
+}
+
+.carousel-text h1 {
+    font-size: 3rem; /* Default size */
+}
+
+.carousel-text h2 {
+    font-size: 2.5rem; /* Default size */
+}
+
+.carousel-text h3 {
+    font-size: 2rem; /* Default size */
+}
+
+/* Media Queries for Responsive Font Sizes */
+@media (max-width: 768px) {
+    .carousel-text h1 {
+        font-size: 2.5rem; /* Smaller size for tablets */
+    }
+
+    .carousel-text h2 {
+        font-size: 2rem; /* Smaller size for tablets */
+    }
+
+    .carousel-text h3 {
+        font-size: 1.5rem; /* Smaller size for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-text h1 {
+        font-size: 2rem; /* Even smaller size for mobile */
+    }
+
+    .carousel-text h2 {
+        font-size: 1.5rem; /* Even smaller size for mobile */
+    }
+
+    .carousel-text h3 {
+        font-size: 1.2rem; /* Even smaller size for mobile */
+    }
+}

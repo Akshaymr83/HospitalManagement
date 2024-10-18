@@ -21,7 +21,7 @@ function Ad() {
       <Carousel.Item>
         <div className='carousel-image-container'>
           <img className='Cimage' src={img2} alt="Second slide"></img>
-          <div className="carousel-text" id='Carousel2'>
+          <div className="carousel-text" id='Carousel2' style={{fontSize:'50px'}}>
             <h1>"Leading the Way in<br></br> Medical Excellence<br></br> Learn About MediCare"</h1>
            
            

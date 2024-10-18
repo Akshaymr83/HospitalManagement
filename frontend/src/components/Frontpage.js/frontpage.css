@@ -4,3 +4,203 @@
     align-items: center;
     margin-top: 9rem;
 }
+.text-box {
+    padding: 1rem; /* Add padding */
+}
+
+.div1, .div2, .div3 {
+    flex: 1 1 300px; /* Responsive flex basis */
+    margin: 0.5rem; /* Margin for spacing */
+}
+
+.div1 img {
+    border-radius: 1rem; /* Round corners */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h3 {
+    font-size: 1.5rem; /* Responsive heading size */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+p {
+    font-size: 1rem; /* Responsive paragraph size */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Show ellipsis for overflow text */
+    white-space: normal; /* Allow wrapping */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.2rem; /* Smaller heading size for mobile */
+    }
+
+    p {
+        font-size: 0.9rem; /* Smaller paragraph size for mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .text-box {
+        padding: 0.5rem; /* Reduce padding on small screens */
+    }
+
+    h3 {
+        font-size: 1rem; /* Even smaller heading size for very small screens */
+    }
+
+    p {
+        font-size: 0.85rem; /* Even smaller paragraph size */
+    }
+}
+
+.text-box {
+    padding: 20px;
+    margin: 0 auto;
+   width: 100%;
+
+
+}
+
+.aboutus-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.aboutus-p-div {
+    flex: 1 1 60%; /* Adjust width to make space for the image */
+    margin-right: 20px;
+}
+
+.aboutus-p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.know-button {
+    background-color: #007bff; /* Assuming this is your button color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.aboutus-button-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 35%; /* Adjust width for image and button */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+   
+    .aboutus-div {
+        flex-direction: column;
+    }
+
+    .aboutus-p-div {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .aboutus-p {
+        font-size: 14px; /* Reduce font size for smaller screens */
+    }
+
+    .know-button {
+        width: 100%; /* Make button full-width on smaller screens */
+    }
+
+    .aboutus-button-img img {
+        height: 200px;
+        width: 200px; /* Reduce image size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .aboutus-p {
+        font-size: 12px; /* Further reduce font size for mobile */
+    }
+
+    .aboutus-button-img img {
+        height: 150px;
+        width: 150px; /* Further reduce image size for mobile */
+    }
+}
+
+
+
+
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  @media (max-width: 768px) {
+    .text-box h2 {
+      font-size: 36px; /* Smaller font size for tablet */
+    }
+  
+    .card-title {
+      font-size: 16px;
+    }
+  
+    .card-text {
+      font-size: 13px;
+    }
+  
+    .card-img-top {
+      height: 180px; /* Adjust image height for tablets */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .text-box h2 {
+      font-size: 28px; /* Even smaller for mobile */
+    }
+  
+    .card-title {
+      font-size: 14px;
+    }
+  
+    .card-text {
+      font-size: 12px;
+    }
+  
+    .card-img-top {
+      height: 150px; /* Further reduce image height for mobile */
+    }
+  }
+  
