@@ -35,6 +35,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 50%;
+    width: 50%;
 }
 #loginbutton {
     border: none;
@@ -76,4 +78,232 @@
 .png2 {
     height: 200px ;
     width: 200px;
+   
+}
+.png3 {
+    height: 200px ;
+    width: 200px;
+    padding: 1rem;
+   
+}
+/* src/components/FullScreenLoader.css */
+
+.fullscreen-loader {
+    position: fixed; /* Make it fixed to cover the entire screen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    backdrop-filter: blur(5px); /* Blur effect */
+    z-index: 1000; /* Ensure it's on top of other elements */
+  }
+  
+  .fullscreen-loader p {
+    margin-top: 10px; /* Space between loader and text */
+    font-size: 18px; /* Adjust font size as needed */
+  }
+  /* For mobile devices (max-width 768px) */
+@media (max-width: 768px) {
+    #containerlogin {
+      background-size: cover;
+      background-attachment: scroll;
+    }
+  
+    .content-wrapper {
+      width: 80%;
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .loginform {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .loginform input {
+      width: 100%;
+      font-size: 14px;
+      padding-left: 15px;
+    }
+  
+    #loginbutton {
+      width: 100%;
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    img {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+    }
+  
+    h3 {
+      font-size: 20px;
+    }
+  }
+  
+  /* For tablets (min-width 769px and max-width 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .content-wrapper {
+      width: 60%;
+      height: auto;
+      padding: 30px;
+    }
+  
+    .loginform {
+      width: 100%;
+    }
+  
+    .loginform input {
+      width: 100%;
+      font-size: 16px;
+      padding-left: 20px;
+    }
+  
+    #loginbutton {
+      width: 100%;
+      font-size: 18px;
+      padding: 10px;
+    }
+  
+    img {
+      width: 180px;
+      height: 180px;
+    }
+  
+    h3 {
+      font-size: 22px;
+    }
+  }
+  
+  /* General styles for desktop */
+  @media (min-width: 1025px) {
+    .content-wrapper {
+      width: 30%;
+    }
+  }
+  
+  /* General Styles */
+.signupcontainer {
+    background-image: url("../Img/pill4.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Add padding to avoid edge clipping */
+}
+
+/* Adjust the form and container */
+#signupcontent-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 80%; /* More flexible width */
+    max-width: 800px;
+    height: 60%;
+}
+
+.signupcontainer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width for small screens */
+}
+
+/* Responsive Image */
+.png2 {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Form Styling */
+form {
+    width: 100%; /* Full width on small screens */
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#loginbutton {
+    width: 100%;
+    padding: 10px;
+    background-color: #4aa6f8;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+#loginbutton:hover {
+    background-color: #000;
+}
+
+/* Responsive text */
+h3 {
+    font-size: 1.8rem;
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 768px) {
+    #signupcontent-wrapper {
+        flex-direction: column; /* Stack the form and image vertically */
+        width: 90%;
+    }
+
+    .png2 {
+        display: none; /* Hide image on smaller screens */
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        width: 100%; /* Make form full width on smaller screens */
+    }
+
+    form input {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    #loginbutton {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form input {
+        font-size: 0.9rem; /* Smaller input font on mobile */
+    }
+
+    #loginbutton {
+        font-size: 0.9rem;
+    }
+
+    h3 {
+        font-size: 1.3rem; /* Adjust heading size */
+    }
 }

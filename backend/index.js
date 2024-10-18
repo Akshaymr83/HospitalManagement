@@ -21,11 +21,23 @@ const url = process.env.MongoDb;
 
 
 
-mongoose.connect(url)
-// mongoose.connect('mongodb+srv://akshaymr83:saYb3czgI8uHbc5e@cluster0.sobagcm.mongodb.net/Hospital')
-  .then(() => console.log('MongoDB connectedd'))
-  .catch((err) => console.error('MongoDB connection error:', err));
 
+const mongoURI = process.env.MongoDb; // Ensure this matches the .env file
+
+async function connectToDB() {
+  try {
+    await mongoose.connect(mongoURI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error('MongoDB connection error:', err);
+    process.exit(1); // Exit the application if the DB connection fails
+  }
+}
+
+connectToDB();
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/images');
@@ -437,6 +449,7 @@ app.post("/signup", (req, res) => {
 
 
 
+
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   loginModel.findOne({ email: email }).then((user) => {
@@ -455,17 +468,50 @@ app.post("/login", (req, res) => {
           res.cookie("token", token);
           return res.json({ Status: "Success", role: user.role });
         } else {
-          return res.json("Password is incorrect");
+          return res.status(401).json({ error: "Password is incorrect" });
         }
       });
     } else {
-      return res.json("No record");
+      return res.status(404).json({ error: "No record found" });
     }
   }).catch((err) => {
     console.error("Error finding user:", err);
     res.status(500).json({ error: "Internal Server Error" });
   });
 });
+
+
+
+
+// app.post("/login", (req, res) => {
+//   const { email, password } = req.body;
+//   loginModel.findOne({ email: email }).then((user) => {
+//     if (user) {
+//       bcrypt.compare(password, user.password, (err, response) => {
+//         if (err) {
+//           console.error("Error comparing passwords:", err);
+//           return res.status(500).json({ error: "Internal Server Error" });
+//         }
+//         if (response) {
+//           const token = jwt.sign(
+//             { email: user.email, role: user.role },
+//             "key",
+//             { expiresIn: "1d" }
+//           );
+//           res.cookie("token", token);
+//           return res.json({ Status: "Success", role: user.role });
+//         } else {
+//           return res.json("Password is incorrect");
+//         }
+//       });
+//     } else {
+//       return res.json("No record");
+//     }
+//   }).catch((err) => {
+//     console.error("Error finding user:", err);
+//     res.status(500).json({ error: "Internal Server Error" });
+//   });
+// });
 ///////////////////////////////DOCTORS////////////////////////////
 
 // app.get('/getDoctor/:id', async (req, res) => {
