@@ -6,7 +6,7 @@ const TextBox = () => {
         <div className='text-box' style={{ background: 'white' }}>
             <div style={{ display: 'flex' }}>
                 <div className='div1'>
-                    <img alt='img' style={{ borderRadius: '1rem'}} src={img} />
+                    <img alt='img' style={{ borderRadius: '1rem', objectFit:'cover'}} src={img} />
                 </div>
                 
                 <div className='div2'>
