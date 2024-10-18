@@ -28,7 +28,7 @@ const Login = () => {
           if (res.data.role === "admin") {
             navigate("/home");
           } else {
-            navigate("/website");
+            navigate("/home");
           }
         }
       })
